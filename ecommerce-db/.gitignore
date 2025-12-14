@@ -1,0 +1,20 @@
+# PostgreSQL data directory
+database/pgdata/
+
+# Backups
+*.sql.gz
+*.dump
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

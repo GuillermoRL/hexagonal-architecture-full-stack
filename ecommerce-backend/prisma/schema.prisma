@@ -1,0 +1,30 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Product {
+  id          Int        @id @default(autoincrement())
+  title       String     @db.VarChar(255)
+  description String?
+  price       Decimal    @db.Decimal(10, 2)
+  image_url   String?
+  promo_id    Int?
+  promotion   Promotion? @relation(fields: [promo_id], references: [id], onUpdate: NoAction, map: "fk_promo")
+
+  @@map("products")
+}
+
+model Promotion {
+  id       Int       @id @default(autoincrement())
+  code     String    @unique @db.VarChar(50)
+  discount Int
+  products Product[]
+
+  @@map("promotions")
+}
