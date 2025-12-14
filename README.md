@@ -20,7 +20,7 @@ La forma más rápida de ejecutar toda la aplicación es usando Docker Compose:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:GuillermoRL/hexagonal-architecture-full-stack.git
 cd acueducto
 ```
 
